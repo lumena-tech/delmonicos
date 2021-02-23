@@ -1,14 +1,37 @@
 # General Grant Proposal
 
-* **Project:** Delmonico
+* **Project:** *Delmonico*
 
 ## Project Overview :page_facing_up: 
-If this application in response to an RFP then please indicate this on the first line of this section.
+The solution we are building is aimed to solve the following problems that Electric Vehicules owners and energy providers are already facing :
+* **Interoperability** : today it's common for EV owner to have multiple (4 or 5) cards dedicated to the connection of charging networks.
+  Nevertheless, it's also common not to be able to charge despite having so many cards and subscriptions.
+* **Costs** : Standard payment networks are often too expensive for payments below few euros or dollars.
+* **Flexibility** : today, handling complex payment scheme (for exemple, reimboursing people who charge at home when the vehicule electricity is paid by the employer)
+  is a real issue and often a good reason enough not to choose EV for company car. 
 
 ### Overview
 
-Please provide the following:
-  * A brief description of the project.
+The goals of the project is to develop and deploy an infrastructure dedicated to the supervision of charging station, strongly coupled 
+with a micro-payment infrastructure. The technical requirements of the solution are the following :
+* It must be very **secure**. Especially, only allowed people and computers should be able to interact with charging stations.
+  Payments must fulfill latests security constraints especially regarding DSP2.
+* It must be as **cheap** as possible to operate. The challenge is to meet the security requirements without having additonal costs or
+  having to rely on external third-party.
+* It must be **easy to deploy**. 
+* It must be **easily extensible**. Other parties should be able to join the networks without compromising the security of the infrastructure. 
+
+Taking into account the above-mentioned constraints, we have chosen to base our solution on blockchain technology, for the following reasons :
+* It is secure by design and **quasi impossible to hack** if carefully used and implemented.
+* It allows **strong authentication** through the use of wallets
+* It allows **secured delivery versus payment**. Each payment can be related to a dedicated delivery of service and the proofs of the delivery can
+  be stored in case of dispute.
+* The **trustless** nature of the technology allows to add new network participants without compromising the security of other participants. 
+* The deployment can be easy and secured if **each charging station is also a network node**. 
+
+The reasons why we chose Substrate/Polkadot are :
+* By developing 
+ 
   * An indication of how you will integrate this project into Substrate / Polkadot / Kusama.
   * An indication of why your team is interested in creating this project.
 
@@ -28,25 +51,28 @@ Are there any other projects similar to yours? If so, how is your project differ
 ## Team :busts_in_silhouette:
 
 ### Team members
-* Name of team leader
-* Names of team members	
+* Fabrice CROISEAUX
+* Michel ONFRAY
+* Antoine DETANTE
+* Franck LEGARDEUR
 
 ### Team Website	
-* https://<your_domain>
+* https://lumena.tech
 
 ### Legal Structure 
 Please provide the name and registered address of the legal entity executing the project. When applying via the General Grants program, these details can also be shared privately via the Google Form used for your application.
 
 ### Team's experience
-Please describe the team's relevant experience.  If the project involves development work, then we'd appreciated if you can single out a few interesting code commits made by team members on their past projects. For research-related grants, references to past publications and projects in a related domain are helpful.  
+Please describe the* team's relevant experience.  If the project involves development work, then we'd appreciated if you can single out a few interesting code commits made by team members on their past projects. For research-related grants, references to past publications and projects in a related domain are helpful.  
 
 ### Team Code Repos
-* https://github.com/<your_repo_1>
-* https://github.com/<your_repo_2>
+* https://github.com/lumena-tech/delmonico
 
 ### Team LinkedIn Profiles
-* https://www.linkedin.com/<person_1>
-* https://www.linkedin.com/<person_2>
+* https://www.linkedin.com/in/fcroiseaux
+* https://www.linkedin.com/in/michel-onfray-464918b7/
+* https://www.linkedin.com/in/adetante/
+* https://www.linkedin.com/in/franck-legardeur-a05577/
 
 ## Development Roadmap :nut_and_bolt: 
 
