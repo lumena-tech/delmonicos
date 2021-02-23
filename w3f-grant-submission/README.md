@@ -1,6 +1,6 @@
 # General Grant Proposal
 
-* **Project:** *Delmonico*
+* **Project:** *Delmonicos*
 
 ## Project Overview :page_facing_up: 
 The solution we are building is aimed to solve the following problems that Electric Vehicules owners and energy providers are already facing :
@@ -26,14 +26,30 @@ Taking into account the above-mentioned constraints, we have chosen to base our 
 * It allows **strong authentication** through the use of wallets
 * It allows **secured delivery versus payment**. Each payment can be related to a dedicated delivery of service and the proofs of the delivery can
   be stored in case of dispute.
-* The **trustless** nature of the technology allows to add new network participants without compromising the security of other participants. 
+* The **trustless** nature of the technology allows adding new network participants without compromising the security of other participants. 
 * The deployment can be easy and secured if **each charging station is also a network node**. 
 
 The reasons why we chose Substrate/Polkadot are :
-* By developing 
+* By having nodes with a dedicated purpose, we will be able to optimise the footprint of the node in order to deploy it to charging stations, 
+  that have limited available resources
+* We can choose the most suitable consensus mechanism and especially combine POA on the parachain with PoS on the relay chain. 
+* We have the flexibility to chose between multiple target topologies. E.g. one parachain for all energy providers on the platform, or one parachain by 
+  energy provider.
+* The composability of the FRAME architecture allows us to reuse existing pallets (e.g. identity, membership, contracts, ...) while being able to add
+  our own specific pallets. 
+* Since we have connections to multiple interfaces (payments, charging power, mobile apps) the offchain features of Substrate will alllow us to handle 
+  the connection with external sources in both directions in a secure manner. 
  
-  * An indication of how you will integrate this project into Substrate / Polkadot / Kusama.
-  * An indication of why your team is interested in creating this project.
+Lumena is creating this project because it is a startup studio focused on innovative technologies and especially blockchain. Our goal is to create new generation of services
+in collaboration with industry partners. We have a well structured process in order to decide if we create a company or not. The followingschema details this process :
+
+![Lumena Process Description](./lumena_process.png)
+
+For Delmonicos, we are currently in phase two where we have to develop a POC of the platform, in order to address risks and to show the feasibility of the project. 
+If we can fund this phase and if the results are positive, we'll create a company dedicated to develop and sell the platform.
+We are applying for the 30k$ Open Grant Program from w3f that will definitely allow us to do these two phases. 
+
+
 
 ### Project Details 
 We expect the teams to already have a solid idea about the project's expected final state.
