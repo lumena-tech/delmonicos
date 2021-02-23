@@ -39,8 +39,8 @@ pub use frame_support::{
 };
 use pallet_transaction_payment::CurrencyAdapter;
 
-/// Import the template pallet.
-pub use pallet_template;
+/// Import the charge-session pallet.
+pub use pallet_charge_session;
 
 /// An index to a block.
 pub type BlockNumber = u32;
@@ -93,8 +93,8 @@ pub mod opaque {
 }
 
 pub const VERSION: RuntimeVersion = RuntimeVersion {
-	spec_name: create_runtime_str!("node-template"),
-	impl_name: create_runtime_str!("node-template"),
+	spec_name: create_runtime_str!("delmonico"),
+	impl_name: create_runtime_str!("delmonico"),
 	authoring_version: 1,
 	spec_version: 100,
 	impl_version: 1,
@@ -259,8 +259,7 @@ impl pallet_sudo::Config for Runtime {
 	type Call = Call;
 }
 
-/// Configure the template pallet in pallets/template.
-impl pallet_template::Config for Runtime {
+impl pallet_charge_session::Config for Runtime {
 	type Event = Event;
 }
 
@@ -279,8 +278,7 @@ construct_runtime!(
 		Balances: pallet_balances::{Module, Call, Storage, Config<T>, Event<T>},
 		TransactionPayment: pallet_transaction_payment::{Module, Storage},
 		Sudo: pallet_sudo::{Module, Call, Config<T>, Storage, Event<T>},
-		// Include the custom logic from the template pallet in the runtime.
-		TemplateModule: pallet_template::{Module, Call, Storage, Event<T>},
+		ChargeSession: pallet_charge_session::{Module, Call, Storage, Event<T>},
 	}
 );
 
