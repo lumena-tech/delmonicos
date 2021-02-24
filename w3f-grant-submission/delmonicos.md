@@ -69,7 +69,7 @@ definitely allow us to do these two phases.
 ### Project Details
 
 The following schema describes the overall architecture of the project.
-
+![Delmonicos architecture](https://github.com/lumena-tech/delmonicos/raw/main/w3f-grant-submission/delmonicos.jpg)
 
 * Mockups/designs of any UI components : We have not yet realized mockups nor UI design. We will have connect existing
   supervision platform to a back-end API. We will also have a mobile app with an embedded wallet to validate charging
