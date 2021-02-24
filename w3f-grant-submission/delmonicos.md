@@ -1,8 +1,8 @@
 # Open Grant Proposal
 
-> This document is referenced in the terms and conditions and therefore needs to contain all the required 
-> information. Don't remove any of the mandatory parts presented in bold letters or as headlines! See the [Open 
-> Grants Program Process](https://github.com/w3f/Open-Grants-Program/blob/master/README_2.md) on how to submit a 
+> This document is referenced in the terms and conditions and therefore needs to contain all the required
+> information. Don't remove any of the mandatory parts presented in bold letters or as headlines! See the [Open
+> Grants Program Process](https://github.com/w3f/Open-Grants-Program/blob/master/README_2.md) on how to submit a
 > proposal.
 
 > This page is also available in [Chinese (中文)](./application-template-cn.md).
@@ -68,11 +68,14 @@ definitely allow us to do these two phases.
 
 ### Project Details
 
+The following schema describes the overall architecture of the project.
+
+
 * Mockups/designs of any UI components : We have not yet realized mockups nor UI design. We will have connect existing
   supervision platform to a back-end API. We will also have a mobile app with an embedded wallet to validate charging
   sessions.
 * API's specifications of the core functionality : not yet defined.
-* An overview of the technology stack to be used. Rust for the blockchain development with substrate and veru probably
+* An overview of the technology stack to be used. Rust for the blockchain development with substrate and very probably
   Ink! to be able to easily inject new rules. React on the front-end. Mobile app will be developed natively, starting
   with ios. The non blockchain back-end will be developed in Rust with actix-web for the http API. We will start by
   developing a blockchain front-end similar to substrate-node-ui-template.
@@ -109,25 +112,25 @@ them.
 
 ### Team's experience
 
-* Fabrice CROISEAUX is CEO of InTech, a company dedicated to software development, and a subsidiary of POST 
-  Luxembourg. Fabrice is chairman of [Infrachain](https://infrachain.com/) and is involved into multiple projects 
-  based on blockchain. Among them : <https://tokeny.com/>, <https://ibisa.network/>, <https://www.fundsdlt.net/>, or 
-  <https://en.mysardines.com/>. He acts as a technology and/or strategy advisor, but also as architect or developer. 
-  Here is a small personal project he has recently developed in Rust : <https://github.com/fcroiseaux/icsmerge>. 
+* Fabrice CROISEAUX is CEO of InTech, a company dedicated to software development, and a subsidiary of POST
+  Luxembourg. Fabrice is chairman of [Infrachain](https://infrachain.com/) and is involved into multiple projects
+  based on blockchain. Among them : <https://tokeny.com/>, <https://ibisa.network/>, <https://www.fundsdlt.net/>, or
+  <https://en.mysardines.com/>. He acts as a technology and/or strategy advisor, but also as architect or developer.
+  Here is a small personal project he has recently developed in Rust : <https://github.com/fcroiseaux/icsmerge>.
   More information on this page : <https://fabrice.io>
-* Michel ONFRAY is Managing Director of is own business: "La Compagnie du Diamantaire", he advises high-potential 
-  technology 
-  company project leaders on the road to success. He also assists Grand Nancy Innovation in structuring its 
-  incubation offer and team training. Michel is also Managing Director of Lumena. He will help in building the 
+* Michel ONFRAY is Managing Director of is own business: "La Compagnie du Diamantaire", he advises high-potential
+  technology
+  company project leaders on the road to success. He also assists Grand Nancy Innovation in structuring its
+  incubation offer and team training. Michel is also Managing Director of Lumena. He will help in building the
   company that will be created following these developments, especially on the fund raising side.
-* Antoine DETANTE is a former employee of InTech and has started his own business as a freelance Software Architect and 
-  Developer. He is an experienced Blockchain architect, mainly on Ethereum, but he as also already "played" with 
-  Substrate. He is the lead architect and developer of the above mentioned project Ibisa and My Sardine. Here are 
-  some sample public repos : <https://github.com/adetante/deconz-sp/tree/master/deconz-sp/src/protocol>, 
+* Antoine DETANTE is a former employee of InTech and has started his own business as a freelance Software Architect and
+  Developer. He is an experienced Blockchain architect, mainly on Ethereum, but he as also already "played" with
+  Substrate. He is the lead architect and developer of the above mentioned project Ibisa and My Sardine. Here are
+  some sample public repos : <https://github.com/adetante/deconz-sp>,
   <https://github.com/adetante/explorer-besu-plugin>, <https://github.com/intech-id/collexi-rollup>.
-* Franck LEGARDEUR is the founder and president of Zeenco, and experienced business developer in the Charging Station 
-  business. Former Managing Director of [ZeBorne](https://zeborne.com/fr-fr/accueil), he will act as the product 
-  owner on this project. 
+* Franck LEGARDEUR is the founder and president of Zeenco, and experienced business developer in the Charging Station
+  business. Former Managing Director of [ZeBorne](https://zeborne.com/fr-fr/accueil), he will act as the product
+  owner on this project.
 
 ### Team Code Repos
 
@@ -186,7 +189,7 @@ For each milestone:
 | 0b. | Documentation | We will provide both inline documentation of the code and a basic tutorial that explains how a user can (for example) spin up one of our Substrate nodes. Once the node is up, it will be possible to send test transactions that will show how the new functionality works. |
 | 0c. | Testing Guide | The code will have unit-test coverage (min. 70%) to ensure functionality and robustness. In the guide we will describe how to run these tests | 
 | 0d. | Article/Tutorial | We will write an article or tutorial that explains the work done as part of the grant.
-| 1. | Substrate module: Identity | Choose integrate existing Identity module to start from, integrate it with the project |  
+| 1. | Substrate module: Identity | Choose an existing Identity module to start from, integrate it with the project |  
 | 2. | Substrate module: Membership | Integrate existing Membership module to start from, integrate it with the project |  
 | 3. | Substrate module: Contract | Integrate Contract module in order to support Ink! smart contracts. Smart Contracts will be used to implement flexible and scalable tariff schemes. |
 | 4. | Substrate module: Charger | We will create a Substrate module (pallet) that will be connected to the charger interface and will collect charging sessions information. At this stage, the module will only listen to events coming from the charger and collect data coming from the charger. The Off-Chain worker architecture will be used to interact with the charger hardware. We will simulate the hardware at this stage. |  
@@ -232,24 +235,24 @@ For each milestone:
 
 ## Future Plans
 
-If this phase is successful, we will create a company dedicated to the development, marketing and selling of the 
+If this phase is successful, we will create a company dedicated to the development, marketing and selling of the
 solution. First step will be to find investors (coming from industry or VCs). Future developments will include :
-* The ability to automatically detect who is trying to charge his EV, based on the location of the station and on 
+* The ability to automatically detect who is trying to charge his EV, based on the location of the station and on
   the location of users, choosing the closest user.
-* A fully working production ready mobile app with an embedded wallet to identify and authenticate users, being 
-  compliant with RDPG and ideally EIDAS for signature. Being EIDAS compliant will probably not be possible at short 
-  term because the current regulation doesn't take into account blockchain specificities. We will nevertheless 
+* A fully working production ready mobile app with an embedded wallet to identify and authenticate users, being
+  compliant with RDPG and ideally EIDAS for signature. Being EIDAS compliant will probably not be possible at short
+  term because the current regulation doesn't take into account blockchain specificities. We will nevertheless
   integrate concepts described in the following document : [SSI eIDAS Legal Report. How eIDAS can legally support digital identity and trustworthy DLT-based transactions in the Digital Single Market](https://joinup.ec.europa.eu/sites/default/files/document/2020-04/SSI_eIDAS_legal_report_final_0.pdf)
-* A payment module that will be compliant with DSP2. Our goal is to develop a reusable module that interact with 
-  banks to prove that the acount owner has given his consent to initiate payment from his account. Here we can 
+* A payment module that will be compliant with DSP2. Our goal is to develop a reusable module that interact with
+  banks to prove that the acount owner has given his consent to initiate payment from his account. Here we can
   leverage the security of the blockchain to comply with PISP constraints. Opportunities are well described [here](https://worldline.com/en/home/knowledgehub/blog/2018/january/PSD2-and-instant-payment-what-are-the-opportunities-for-e-merchants.html).
-* Capability to add innovative possibilities via Ink! Smart Contracts. e.g. variable pricing depending on the load 
+* Capability to add innovative possibilities via Ink! Smart Contracts. e.g. variable pricing depending on the load
   of the energy network, pricing could be determined by consensus, charging session reservations, etc...
 
 ## Additional Information :heavy_plus_sign:
 
-We are convinced that this project has a huge potential to solve the majority of problems or paint points that EV 
-users are facing regarding charging their vehicule. This is typically a domain where blockchain technology is the ideal 
-technology by allowing the secure digitalisation of assets (charging power, money and identity) and the secure 
-conversion of value between these assets. Our potential partnership with DBT will give us a direct access to the 
+We are convinced that this project has a huge potential to solve the majority of problems or paint points that EV
+users are facing regarding charging their vehicule. This is typically a domain where blockchain technology is the ideal
+technology by allowing the secure digitalisation of assets (charging power, money and identity) and the secure
+conversion of value between these assets. Our potential partnership with DBT will give us a direct access to the
 market.
