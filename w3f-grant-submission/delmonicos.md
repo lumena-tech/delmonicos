@@ -9,14 +9,20 @@
 
 * **Project Name:** Delmonicos
 * **Team Name:** Lumena
-* **Payment Address:** BTC
+* **Payment Address:** BTC 1CWbAdyb7keRMxosHs62cz8rG7Np31LPEo
 
 *The above combination of your GitHub account submitting the application and payment address will be your unique
 identifier during the program. Please keep them safe.*
 
 ## Project Overview :page_facing_up:
+#### A blockchain based EV charging platform initiated by [Lumena](https://www.lumena.tech) ####
 
-This application is not in response to an RFP.
+*This application is not in response to an RFP.*
+
+> Why Delmonicos ?
+> Delmonico's is a **chain** of restaurants in U.S. where the notables liked to go, among them Nikola Tesla. Tesla 
+> worked every day from 9:00 a.m. until 6:00 p.m. or later, with dinner at exactly 8:10 p.m., at Delmonico's 
+> restaurant. So Delmonico's is a **chain** with Tesla going in it. An ideal codename for such a project. :blush:
 
 ### Overview
 
@@ -28,7 +34,7 @@ strongly coupled with a micro-payment infrastructure. The technical requirements
 * It must be as **cheap** as possible to operate. The challenge is to meet the security requirements without having
   additonal costs or having to rely on external third-party.
 * It must be **easy to deploy**.
-* It must be **easily extensible**. Other parties should be able to join the networks without compromising the security
+* It must be **easily scalable**. Other parties should be able to join the networks without compromising the security
   of the infrastructure.
 
 Taking into account the above-mentioned constraints, we have chosen to base our solution on blockchain technology, for
@@ -71,7 +77,7 @@ definitely allow us to do these two phases.
 The following schema describes the overall architecture of the project.
 ![Delmonicos architecture](https://github.com/lumena-tech/delmonicos/raw/main/w3f-grant-submission/delmonicos.jpg)
 
-* Mockups/designs of any UI components : We have not yet realized mockups nor UI design. We will have connect existing
+* Mockups/designs of any UI components : We have not yet realized mockups nor UI design. We will connect existing
   supervision platform to a back-end API. We will also have a mobile app with an embedded wallet to validate charging
   sessions.
 * API's specifications of the core functionality : not yet defined.
@@ -82,13 +88,30 @@ The following schema describes the overall architecture of the project.
 * Documentation of core components, protocols, architecture etc. to be deployed
 * PoC/MVP or other relevant prior work or research on the topic. Current work is located
   at <https://github.com/lumena-tech/delmonicos>
+  
+#### Data Management
+We don't plan to store private data on-chain. Only figures regarding the Kwh consumed for charging sessions and 
+corresponding price. Otherwise, proofs will be stored on-chain (e.g. proof of consent of starting a charging session,
+proof of consent of bank account debit, ...). Proofs will mainly consist in hash of structured data signed by 
+external actors. 
+
+We will take care of being GDPR compliant. Private data will be stored of chain. The detailed design of data 
+management will be decided during the development of the project. We already have experience in developing GDPR 
+compliant blockchain based system for identity by having heavily contributed to the development of [OnchainId](https://tokeny.com/onchainid/).
+[API documentation](http://docs.onchainid.com/).
 
 ### Ecosystem Fit
 
-We don't know any similar projects. The fact that charging stations themselves will be blockchain nodes is a real
-innovation. We are currently speaking with [DBT](https://www.dbt.fr/en/)
-and they are interested in working with us. If first phases are successful, we will very probably create a spinoff with
-them.
+At that stage, we are not aware of any similar projects. The fact that charging stations themselves would be 
+blockchain nodes is a real innovation. We are currently talking with 2 solid players in the market around this 
+technology that would be a breakthrough:
+* A solid French manufacturer of charging station that would be keen to propose simpler and cost effective 
+  micropayment solution
+* A Historic car manufacturer that would be keen to facilitate access to its large network of customers (B2C and B2B) 
+  by providing easy and accessible payment solution to the future EV driver.
+
+With both of them, that are demonstrating solid interest, we would be able to engage POC and even Spin off, should 
+we be successful in the current phase.
 
 ## Team :busts_in_silhouette:
 
@@ -126,11 +149,13 @@ them.
 * Antoine DETANTE is a former employee of InTech and has started his own business as a freelance Software Architect and
   Developer. He is an experienced Blockchain architect, mainly on Ethereum, but he as also already "played" with
   Substrate. He is the lead architect and developer of the above mentioned project Ibisa and My Sardine. Here are
-  some sample public repos : <https://github.com/adetante/deconz-sp>,
-  <https://github.com/adetante/explorer-besu-plugin>, <https://github.com/intech-id/collexi-rollup>.
-* Franck LEGARDEUR is the founder and president of Zeenco, and experienced business developer in the Charging Station
-  business. Former Managing Director of [ZeBorne](https://zeborne.com/fr-fr/accueil), he will act as the product
-  owner on this project.
+  some sample public repos : <https://github.com/adetante/deconz-sp>, <https://github.com/adetante/explorer-besu-plugin>,
+  <https://github.com/intech-id/collexi-rollup>.
+* Franck LEGARDEUR is the founder and president of ZEENCO (Zero Emission ENergy COmpany), and has a solid experience 
+  in the EV infrastructure. He was the Managing Director of France & South of Europe of [EVBox](https://evbox.com/fr-fr/)
+  before becoming Managing Director of [ZeBorne](https://zeborne.com/fr-fr/accueil). He is now deploying solution 
+  for B2B and B2C customers all over France. He will act as the product owner on this project.
+
 
 ### Team Code Repos
 
@@ -171,11 +196,9 @@ For each milestone:
 
 ### Overview
 
-* **Total Estimated Duration:** Duration of the whole project (e.g. 2 months)
-* **Full-time equivalent (FTE):**  Workload of an employed
-  person ([see](https://en.wikipedia.org/wiki/Full-time_equivalent)) (e.g. 2 FTE)
-* **Total Costs:** Amount of Payment in USD for the whole project. The total amount of funding needs to be below $30k
-  for initial grants and $100k for follow-up grants at the time of submission. (e.g. 1.000 USD)
+* **Total Estimated Duration:** 3 months
+* **Full-time equivalent (FTE):**  1 FTE
+* **Total Costs:** 29.400 USD
 
 ### Milestone 1 Implement charger module (pallet)
 
@@ -189,9 +212,9 @@ For each milestone:
 | 0b. | Documentation | We will provide both inline documentation of the code and a basic tutorial that explains how a user can (for example) spin up one of our Substrate nodes. Once the node is up, it will be possible to send test transactions that will show how the new functionality works. |
 | 0c. | Testing Guide | The code will have unit-test coverage (min. 70%) to ensure functionality and robustness. In the guide we will describe how to run these tests | 
 | 0d. | Article/Tutorial | We will write an article or tutorial that explains the work done as part of the grant.
-| 1. | Substrate module: Identity | Choose an existing Identity module to start from, integrate it with the project |  
-| 2. | Substrate module: Membership | Integrate existing Membership module to start from, integrate it with the project |  
-| 3. | Substrate module: Contract | Integrate Contract module in order to support Ink! smart contracts. Smart Contracts will be used to implement flexible and scalable tariff schemes. |
+| 1. | Substrate module: Identity | Choose an existing [Identity](https://github.com/paritytech/substrate/tree/master/frame/identity) module to start from, integrate it with the project |  
+| 2. | Substrate module: Membership | Integrate existing [Membership](https://github.com/paritytech/substrate/tree/master/frame/membership) module to start from, integrate it with the project |  
+| 3. | Substrate module: Contracts | Integrate [Contracts](https://github.com/paritytech/substrate/tree/master/frame/contracts) module in order to support Ink! smart contracts. Smart Contracts will be used to implement flexible and scalable tariff schemes. |
 | 4. | Substrate module: Charger | We will create a Substrate module (pallet) that will be connected to the charger interface and will collect charging sessions information. At this stage, the module will only listen to events coming from the charger and collect data coming from the charger. The Off-Chain worker architecture will be used to interact with the charger hardware. We will simulate the hardware at this stage. |  
 | 5. | Substrate chain | Modules Identity and Charger of our custom chain will interact so that the information of who has accepted and completed a charging session will be store on the blockchain, signed by the charging station and by the user. |  
 | 6. | Docker | We will provide a dockerfile to demonstrate the full functionality of our chain |
@@ -208,8 +231,8 @@ For each milestone:
 | 0b. | Documentation | We will provide both inline documentation of the code and a basic tutorial that explains how a user can (for example) spin up one of our Substrate nodes. Once the node is up, it will be possible to send test transactions that will show how the new functionality works. |
 | 0c. | Testing Guide | The code will have unit-test coverage (min. 70%) to ensure functionality and robustness. In the guide we will describe how to run these tests | 
 | 0d. | Article/Tutorial | We will write an article or tutorial that explains the work done as part of the grant.
-| 1. | Substrate module: Identity | Adapt Identity module with the required information that are needed for charging purpose |  
-| 2. | Substrate module: Membership | Implement Membership module check if the connected user has subscribed to the service or is allowed to initiate one time payment by his bank, using SEPA Instant payment or SEPA Mandate. |  
+| 1. | Substrate module: Identity | Adapt [Identity](https://github.com/paritytech/substrate/tree/master/frame/identity) module with the required information that are needed for charging purpose |  
+| 2. | Substrate module: Membership | Implement [Membership](https://github.com/paritytech/substrate/tree/master/frame/membership) module check if the connected user has subscribed to the service or is allowed to initiate one time payment by his bank, using SEPA Instant payment or SEPA Mandate. |  
 | 3. | Substrate Tariff Smart Contract | Develop a first simple tariff smart contract with a fixed price by KWh.  |
 | 4. | Substrate module: Payment | We will create a Substrate module (pallet) that will initiate payment to the bank when the charging session is finished and the total price is known. The Off-Chain worker architecture will be used to interact with the charger hardware. We will simulate the hardware at this stage. |  
 | 5. | Substrate module: Charger | The Charger Module will evolve in order to be able to initiate command on the charging station (starting a session or stopping a session). |
@@ -254,5 +277,5 @@ solution. First step will be to find investors (coming from industry or VCs). Fu
 We are convinced that this project has a huge potential to solve the majority of problems or paint points that EV
 users are facing regarding charging their vehicule. This is typically a domain where blockchain technology is the ideal
 technology by allowing the secure digitalisation of assets (charging power, money and identity) and the secure
-conversion of value between these assets. Our potential partnership with DBT will give us a direct access to the
-market.
+conversion of value between these assets. Our potential partnerships with actors mentioned above will give us direct 
+access to the market.
